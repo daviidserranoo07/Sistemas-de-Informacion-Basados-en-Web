@@ -40,7 +40,7 @@ a {
 }
 
 a:hover{
-    font-size: 1.9rem;
+    font-size: 2.1rem;
 }
 
 li{
@@ -221,7 +221,7 @@ footer{
 
 .precio-actividad{
     grid-row: 7;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .informacion{
@@ -230,6 +230,11 @@ footer{
     background-color: white;
     border: 0.7rem solid #000;
     border-radius: 20px;
+}
+
+.informacion h4{
+    text-align: left;
+    margin-left: 5rem;
 }
 
 .lateral{
@@ -242,6 +247,10 @@ footer{
     color: blue;
     text-transform: uppercase;
     text-align: center;
+}
+
+.direccion p:hover{
+    font-size: 2rem;
 }
 
 .fecha{
