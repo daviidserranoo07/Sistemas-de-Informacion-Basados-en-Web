@@ -32,7 +32,11 @@ h1,h2,h3{
 }
 
 a {
- text-decoration: none;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 1.9rem;
 }
 
 li{
@@ -45,6 +49,7 @@ img{
     height: 400px;
     border-radius: 2rem;
     text-align: center;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 main{
@@ -74,7 +79,7 @@ aside h3{
 
 header{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 10% 90%;
     background-color: #333;
     justify-content: space-between;
     padding: 1rem;
@@ -86,6 +91,14 @@ header{
 
 header a{
     color: white;
+    text-decoration: none;
+    min-width: 80px;
+    max-width: 100px;
+    width: 100px;
+    height: 100px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 
@@ -95,6 +108,10 @@ header nav{
 
 .logo{
     grid-column: 1;
+}
+
+.logo:hover{
+    transform: scale(1.2);
 }
 
 footer{
@@ -142,13 +159,8 @@ div p{
 }
 
 .container-columns{
+    display: grid;
     text-align: center;
-}
-
-.container-columns p{
-    text-align: justify;
-    margin: 1rem 1rem;
-    padding: 2rem;
 }
 
 .container-columns a{
@@ -161,25 +173,23 @@ div p{
     border: 0.7rem solid #000;
     border-radius: 20px;
     margin: 1rem 1rem;
-    line-height: 2.5rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
 }
 
 .actividad img{
-    margin: 1rem 1rem;
+    margin: 2rem 2rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
 }
 
 .logo{
-    margin-top: 2rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
     min-width: 80px;
     max-width: 100px;
     width: 100px;
     height: 100px;
-}
-
-.actividad{
-    text-align: center;
 }
 
 .lateral{
@@ -193,6 +203,10 @@ div p{
         display: grid;
         margin: 1rem 1rem;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .actividad{
+        margin: 1rem 1rem;
     }
 
     img{

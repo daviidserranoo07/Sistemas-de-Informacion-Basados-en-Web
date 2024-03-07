@@ -78,6 +78,7 @@ footer p{
 
 .direccion p{
     text-align: center;
+    text-transform: uppercase;
 }
 
 .logo{
