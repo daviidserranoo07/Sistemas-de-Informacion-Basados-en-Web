@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades de Montaña</title>
+    <link rel="stylesheet" href="actividad.css">
+    <link rel="stylesheet" href="comentarios.css">
+</head>
+<body>
+    <header>
+        <a href="portada.html">
+            <img class="logo" src="img/logo.jpg" alt="logo">
+        </a>
+        <h1>Actividades Montaña</h1>
+        <nav>
+            <ul class="menusup">
+                <li><a href="#">¿Quienes Somos?</a></li>
+                <li><a href="#">Mejores Rutas</a></li>
+                <li><a href="#">Teléfono</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="lateral">
+            <h3>Enlaces de Interes</h3>
+            <ul class="menulat">
+                <li><a href="#">Horario</a></li>
+                <li><a href="#">Correo Electrónico</a></li>
+                <li><a href="#">Equipo</a></li>
+                <li><a href="#">Opiniones de Clientes</a></li>
+            </ul>
+        </aside>
+        <main>
+            <h2>Sierra Nevada</h2>
+            <div class="container-columns">
+                <div class="container-columns-content">
+                    <img class="primera-foto-sierra" src="img/sierranevada.jpg" alt="Sierra Nevada">
+                    <div class="informacion">
+                        <h4>Descripción Actividad</h4>
+                        <p>ACTIVIDADES TODO EL AÑO EN NUESTRO PARAÍSO INVERNAL
+                            Sierra Nevada no es solo un destino invernal; es un paraíso de aventuras durante todo el año. Cada estación revela un nuevo mundo de posibilidades para quienes buscan emociones y experiencias únicas.
+                        
+                            Actividades todo el año en nuestro paraíso invernal
+                            En invierno, las pistas de esquí y snowboard son las reinas, ofreciendo desafíos tanto para principiantes como para expertos. Los amantes del paisaje nevado también pueden sumergirse en rutas de raquetas de nieve o accesos con nuestros telecabinas a las actividades de la zona de Borreguiles.
+                        
+                            A medida que la nieve se derrite, Sierra Nevada florece en primavera y verano, presentando un escenario ideal para el senderismo, el ciclismo de montaña y la escalada. Los senderos te llevan a través de paisajes alpinos, lagunas escondidas y miradores panorámicos.
+                        
+                            Y no olvidemos el otoño, con sus tonos dorados y rojizos, perfecto para las caminatas tranquilas y la fotografía de paisajes.
+                        </p> 
+                        <h4>recomendaciones</h4>
+                        <p>Se recomienda la utilización de ropa y calzado de abrigo e impermeable. Lo mejor es vestirse por capas para poder adaptarse fácilmente a los cambios de temperatura. El aire entre las prendas es el mejor aislante.</p>
+                        <p class="fecha">Fecha de Realización de la Actividad: 27/03/2024</p>
+                        <h4 class="precio-actividad">Precio: 50€ </h4>
+                        <a class="direccion" href="https://www.google.com/maps?hl=es&gl=es&um=1&ie=UTF-8&fb=1&sa=X&ftid=0xd71dd40f85d032b:0x83c3bcec66a06c14">
+                            <p>Andalucía Pl., 18196 Pradollano, Granada</p>   
+                        </a>
+                    </div>
+                    <img class="segunda-foto-sierra" src="img/sierra-nevada-2.png">
+                </div>
+                <div class="container-columns-buttons">
+                    <a href="actividad_imprimir.html">
+                        <button class="button-imprimir">Imprimir</button>
+                    </a>
+                    <a href="#">
+                        <button class="button-twitter">Twitter</button>
+                    </a>
+                    <a href="#">
+                        <button class="button-facebook">Facebook</button>
+                    </a>
+                    <a href="#">
+                        <button id="button-comments">Comentarios</button>
+                    </a>
+                </div>
+                <div class="comments">
+                    <div class="comment">
+                        <img class="foto-perfil" src="img/user-photo.jpg">
+                        <h5 class="name-user">David Serrano</h5>
+                        <p class="comment-p">Las rutas de senderismo con raquetas de nieve nos permiten desplazarnos con facilidad por encima de las superficies nevadas.
+                            Las rutas de senderismo habituales se Conviertes em uma experiencia completamente diferentes a las que ya estas acostumbrado.
+                            Caminar por encima de terrenos nevados nos permite descubrir espacios de gran belleza paisajística de una forma divertida y completamente seguras.</p>
+                        <p class="comment-date"><span class="date"></span></p>
+                    </div>
+                    <div class="comment">
+                        <img class="foto-perfil" src="img/user-photo.jpg">
+                        <h5 class="name-user">Oscar David</h5>
+                        <p class="comment-p">Las rutas de senderismo con raquetas de nieve nos permiten desplazarnos con facilidad por encima de las superficies nevadas.
+                            Las rutas de senderismo habituales se Conviertes em uma experiencia completamente diferentes a las que ya estas acostumbrado.
+                            Caminar por encima de terrenos nevados nos permite descubrir espacios de gran belleza paisajística de una forma divertida y completamente seguras.</p>
+                        <p class="comment-date"><span class="date"></span></p>
+                    </div>
+                    <div class="content-form">
+                        <form id="form" method="post">
+                            <div class="imagen">
+                                <label for="imagen">Subir Foto Perfil</label>
+                                <input type="file" id="input-image" name="imagen" accept="image/*"><!--Aceptamos cualquier formato de imagen-->
+                            </div>
+                            <div class="name">
+                                <label for="nombre">Nombre:</label>
+                                <input id="input-name" type="text" name="nombre">
+                            </div>
+                            <div class="correo">
+                                <label for="correo">Correo Electrónico:</label>
+                                <input id="input-correo" type="text" name="nombre">
+                            </div>
+                            <div class="comentario">
+                                <label for="comentario">Comentario:</label>
+                                <textarea id="input-comment" name="comentario"></textarea>
+                            </div>
+                            <a href="#">
+                                <button type="submit" id="set-formulario">Enviar</button>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>David Serrano Domínguez - © 2024</p>
+    </footer>
+    <script src="comentarios.js" defer></script>
+</body>
+</html>
