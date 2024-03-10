@@ -100,4 +100,15 @@
     .comment{
         grid-template-columns: 10% 90%;
     }
+
+    .name-user{
+        margin-left: 5rem;
+    }
 }
+
+@media (min-width: 1400px) {
+    .name-user{
+        margin-left: 1.5rem;
+    }
+}
+

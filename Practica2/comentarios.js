@@ -80,15 +80,19 @@ document.addEventListener("DOMContentLoaded",function(){
 
 function obtenerFechaActual() {
     var fechaHora = new Date();
-    var dia = fechaHora.getDate();
-    var mes = fechaHora.getMonth() + 1; // Los meses comienzan desde 0
-    var año = fechaHora.getFullYear();
-    var horas = fechaHora.getHours();
-    var minutos = fechaHora.getMinutes();
-    var segundos = fechaHora.getSeconds();
+    var dia = agregarCeroDelante(fechaHora.getDate());
+    var mes = agregarCeroDelante(fechaHora.getMonth()) + 1; // Los meses comienzan desde 0
+    var año = agregarCeroDelante(fechaHora.getFullYear());
+    var horas = agregarCeroDelante(fechaHora.getHours());
+    var minutos = agregarCeroDelante(fechaHora.getMinutes());
+    var segundos = agregarCeroDelante(fechaHora.getSeconds());
 
     // Damos formato a la fecha y hora
     return dia + '/' + mes + '/' + año + ' ' + horas + ':' + minutos + ':' + segundos;
+}
+
+function agregarCeroDelante(numero) {
+    return numero < 10 ? '0' + numero : numero;
 }
 
 function validarCorreo(correo){
@@ -98,7 +102,7 @@ function validarCorreo(correo){
 
 
 //GESTIONAMOS PALABRAS PROHIBIDAS
-var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón"]; //Defino palabras prohibidas
+var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón","puto","cabrones"]; //Defino palabras prohibidas
 var comentarioInput = document.getElementById("input-comment");//Obtengo el comentario que se va escribiendo
 
 comentarioInput.addEventListener("input",function(){ //Cuando se escribe en el input de comentario se ejecuta esta función
