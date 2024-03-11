@@ -1,5 +1,6 @@
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/+esm'
+
 document.addEventListener("DOMContentLoaded",function(){
-    var mostrarComentarios = document.getElementById("button-comments"); /*Coge el boton de los comentarios*/
     var comments = document.getElementById("comments");
     var addForm = document.getElementById("form");
     var formulario = document.getElementById("content-form");
@@ -7,18 +8,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
     commentDate[0].textContent = obtenerFechaActual();
     commentDate[1].textContent = obtenerFechaActual();
-
-
-    mostrarComentarios.addEventListener("click",function(){ //Se ejecuta esta función cuando se hace click en el boton de los comentarios
-        event.preventDefault();//Evita que se refresca la página cuando lo pulso
-        if(comments.classList.contains("oculto")){//Cambia el estilo el display del div de los comentarios de none a grid 
-            comments.classList.remove("oculto");
-            comments.classList.add("visible")
-        }else{
-            comments.classList.remove("visible");
-            comments.classList.add("oculto")
-        }
-    });
 
     addForm.addEventListener("submit",function(){
         event.preventDefault();
@@ -33,9 +22,8 @@ document.addEventListener("DOMContentLoaded",function(){
         //Compruebo que ningun campo esta vacío y en caso de estarlo mando alerta avisando
         if(nombre.trim() === '' || correo.trim() === '' || comentario.trim() === '' ){
             Swal.fire({
-                title: 'No ha rellenado todos los campos',
+                title: '<h4 style="color: black">No ha rellenado todos los campos</h4>',
                 icon: 'error',
-                confirmButtonText: 'Ok'
             });
             return;
         }
@@ -43,9 +31,8 @@ document.addEventListener("DOMContentLoaded",function(){
         //Compruebo que el formato del correo es correcto
         if(!validarCorreo(correo)){
             Swal.fire({
-                title: 'El formato del correo es incorrecto',
+                title: '<h4>El formato del correo es incorrecto</h4>',
                 icon: 'error',
-                confirmButtonText: 'Continuar'
             });
             return;
         }
@@ -109,19 +96,3 @@ function validarCorreo(correo){
     var expresion = /\S+@\S+\.\S+/;
     return expresion.test(correo);
 }
-
-
-//GESTIONAMOS PALABRAS PROHIBIDAS
-var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón","puto"]; //Defino palabras prohibidas
-var comentarioInput = document.getElementById("input-comment");//Obtengo el comentario que se va escribiendo
-
-comentarioInput.addEventListener("input",function(){ //Cuando se escribe en el input de comentario se ejecuta esta función
-        var comentario = comentarioInput.value; //Obtengo el comentario escrito
-
-        palabrasProhibidas.forEach(function(palabra){ //Define las expresiones regulares de las palabras prohibidas y las sustituyo por astersicos
-            var regex = new RegExp('\\b' + palabra + '\\b','gi'); //La \\b define los limites de las palabras y g para todas las palabras que haya e i para no diferenciar entre mayusculas y minúsculas
-            comentario = comentario.replace(regex,'*'.repeat(palabra.length)); //Reemplazo las palabras de las expresiones regulares por asteriscos
-        });
-
-        comentarioInput.value = comentario; //Sustituyo el comentario que teniamos en el input por el nuevo quitando palabras prohibidas
-});
