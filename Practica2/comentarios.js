@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(){
     var mostrarComentarios = document.getElementById("button-comments"); /*Coge el boton de los comentarios*/
-    var comments = document.getElementsByClassName("comments");
+    var comments = document.getElementById("comments");
     var addForm = document.getElementById("form");
     var formulario = document.getElementById("content-form");
     var commentDate = document.getElementsByClassName("date");
@@ -11,10 +11,12 @@ document.addEventListener("DOMContentLoaded",function(){
 
     mostrarComentarios.addEventListener("click",function(){ //Se ejecuta esta función cuando se hace click en el boton de los comentarios
         event.preventDefault();//Evita que se refresca la página cuando lo pulso
-        if(comments[0].style.display === "none"){
-            comments[0].style.display = "grid"; //Cambia el estilo el display del div de los comentarios de none a grid 
+        if(comments.classList.contains("oculto")){//Cambia el estilo el display del div de los comentarios de none a grid 
+            comments.classList.remove("oculto");
+            comments.classList.add("visible")
         }else{
-            comments[0].style.display = "none";
+            comments.classList.remove("visible");
+            comments.classList.add("oculto")
         }
     });
 
@@ -30,13 +32,21 @@ document.addEventListener("DOMContentLoaded",function(){
 
         //Compruebo que ningun campo esta vacío y en caso de estarlo mando alerta avisando
         if(nombre.trim() === '' || correo.trim() === '' || comentario.trim() === '' ){
-            alert("Por favor, rellene todos los campos.");
+            Swal.fire({
+                title: 'No ha rellenado todos los campos',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
             return;
         }
 
         //Compruebo que el formato del correo es correcto
         if(!validarCorreo(correo)){
-            alert("El correo electrónico no es válido");
+            Swal.fire({
+                title: 'El formato del correo es incorrecto',
+                icon: 'error',
+                confirmButtonText: 'Continuar'
+            });
             return;
         }
 
@@ -71,7 +81,7 @@ document.addEventListener("DOMContentLoaded",function(){
         nuevoContenido.appendChild(fecha);
 
         ///Inserto cada nuevo comentario debajo del formulario y de los comentarios ya existentes
-        comments[0].insertBefore(nuevoContenido,formulario);
+        comments.insertBefore(nuevoContenido,formulario);
 
         //Limpio los campos del formulario
         addForm.reset();
@@ -81,7 +91,7 @@ document.addEventListener("DOMContentLoaded",function(){
 function obtenerFechaActual() {
     var fechaHora = new Date();
     var dia = agregarCeroDelante(fechaHora.getDate());
-    var mes = agregarCeroDelante(fechaHora.getMonth()) + 1; // Los meses comienzan desde 0
+    var mes = agregarCeroDelante(fechaHora.getMonth() + 1); // Los meses comienzan desde 0
     var año = agregarCeroDelante(fechaHora.getFullYear());
     var horas = agregarCeroDelante(fechaHora.getHours());
     var minutos = agregarCeroDelante(fechaHora.getMinutes());
@@ -102,7 +112,7 @@ function validarCorreo(correo){
 
 
 //GESTIONAMOS PALABRAS PROHIBIDAS
-var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón","puto","cabrones"]; //Defino palabras prohibidas
+var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón","puto"]; //Defino palabras prohibidas
 var comentarioInput = document.getElementById("input-comment");//Obtengo el comentario que se va escribiendo
 
 comentarioInput.addEventListener("input",function(){ //Cuando se escribe en el input de comentario se ejecuta esta función

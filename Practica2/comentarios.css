@@ -1,5 +1,9 @@
-.comments{
+.oculto{
     display: none;
+}
+
+.visible{
+    display: grid;
 }
 
 .comment{
@@ -93,7 +97,7 @@
 }
 
 @media (min-width: 1200px){
-    .comments{
+    .visible{
         grid-column: span 2;
     }
 
