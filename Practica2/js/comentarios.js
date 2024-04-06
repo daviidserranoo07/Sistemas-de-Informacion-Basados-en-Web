@@ -1,3 +1,4 @@
+//CODIGO PARA AÑADIR UN NUEVO COMENTARIO EN EL APARTADO COMENTARIOS
 import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/+esm'
 
 document.addEventListener("DOMContentLoaded",function(){
@@ -6,6 +7,7 @@ document.addEventListener("DOMContentLoaded",function(){
     var formulario = document.getElementById("content-form");
     var commentDate = document.getElementsByClassName("date");
 
+    //Añado la fecha para los dos comentarios que se han insertado con html
     commentDate[0].textContent = obtenerFechaActual();
     commentDate[1].textContent = obtenerFechaActual();
 

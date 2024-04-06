@@ -1,5 +1,5 @@
 //GESTIONAMOS PALABRAS PROHIBIDAS
-var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","cabrón","puto"]; //Defino palabras prohibidas
+var palabrasProhibidas = ["puta","cabron","gilipollas","pollas","tonto","retrasado","puto"]; //Defino palabras prohibidas
 var comentarioInput = document.getElementById("input-comment");//Obtengo el comentario que se va escribiendo
 
 comentarioInput.addEventListener("input",function(){ //Cuando se escribe en el input de comentario se ejecuta esta función

@@ -106,9 +106,6 @@ header nav{
     grid-column: 2;
 }
 
-.logo{
-    grid-column: 1;
-}
 
 .logo:hover{
     transform: scale(1.2);
@@ -153,9 +150,10 @@ div p{
     text-transform: uppercase;
 }
 
-.container{
+
+.container-columns-content{
     display: grid;
-    margin: auto;
+    justify-items: center;
 }
 
 .container-columns{
