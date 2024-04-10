@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/portada.css">
+{% endblock %}
+    {% block actividades %}
+            <h2>Actividades Disponibles</h2>
+            <div class="container-columns">
+                {% for Actividad in actividades %}
+                <div class="actividad">
+                    <a href="actividad/{{ Actividad.id }}">
+                        <img src="{{ Actividad.portada }}" alt="{{ Actividad.nombre }}">
+                        <h3> {{ Actividad.nombre }}</h3>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+    {% endblock %}
