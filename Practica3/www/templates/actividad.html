@@ -27,8 +27,11 @@
                             {% endfor %}
                         </div>
                         <ul class="puntos">
-                            <li class="punto activo"></li>
-                            <li class="punto"></li>
+                            <!-- <li class="punto activo"></li>
+                            <li class="punto"></li> -->
+                            {% for foto in actividad.fotos %}
+                            <li class="punto {% if loop.first %}activo{% endif %}"></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
