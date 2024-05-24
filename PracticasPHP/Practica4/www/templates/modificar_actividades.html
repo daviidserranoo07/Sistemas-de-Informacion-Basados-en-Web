@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/modificarActividad.css">
+{% endblock %}
+
+{% block principal %}
+<div class="container-rows">
+    {% for Actividad in actividades %}
+    <div class="actividad">
+        <a href="../actividad/{{ Actividad['id'] }}">
+            <h3> {{ Actividad['nombre'] }}</h3>
+        </a>
+        <a href="../modificar_actividad/{{ Actividad['id'] }}">
+            <img class="edit" src="../img/lapiz.png"/>
+        </a>
+        <form id="delete-form" action="../eliminar_actividad.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{ Actividad['id'] }}">
+            <input type="image" src="../img/papelera.png" class="edit">
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

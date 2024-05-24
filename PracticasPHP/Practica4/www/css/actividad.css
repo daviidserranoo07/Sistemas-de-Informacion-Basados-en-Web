@@ -1,0 +1,166 @@
+button:hover,#set-formulario:hover{
+    transform: scale(1.2);
+}
+
+.container-columns div{
+    padding: 1rem;
+}
+
+.container-columns p{
+    text-align: justify;
+    margin: 2rem 4rem;
+    padding: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    min-width: 400px;
+    display: block;
+}
+
+.container-columns-content{
+    display: grid;
+    justify-items: center;
+}
+
+.container-columns-buttons{
+    text-align: center;
+}
+
+.primera-foto-sierra{
+    grid-column: 1;
+    text-align: center;
+    grid-row: 1;
+}
+
+.segunda-foto-sierra{
+    grid-row: 2;
+    margin-top: 5rem;
+}
+
+.precio-actividad{
+    grid-row: 7;
+    font-size: 3rem;
+}
+
+.informacion{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-color: white;
+    border: 0.7rem solid #000;
+    border-radius: 20px;
+}
+
+.informacion h4{
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.lateral{
+    grid-row: 1;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.direccion p{
+    color: blue;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.direccion p:hover{
+    font-size: 2rem;
+}
+
+.fecha{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#button-update{
+    background-color: #4CAF50;
+    width: 500px;
+}
+
+.boton-modificar:hover{
+    transform: none;
+}
+
+#enlace-modificar{
+    background-color: #4CAF50;
+    padding: 2rem;
+    margin: 3rem;
+    color: white;
+    border-radius: 1rem;
+    width: 20rem;
+}
+
+@media (min-width: 1200px){
+    .container-columns{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem 1rem;
+    }
+
+    .primera-foto-sierra,.segunda-foto-sierra{
+        max-width: 450px;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .container-columns-content{
+        grid-column: 1 / -1;
+    }
+
+    .ubicacion{
+        grid-row: 4;
+        margin-top: 7rem;
+        height: 400px;
+        width: 500px;
+    }
+
+    .container-columns-buttons{
+        grid-row: 2;
+        grid-column: 1 / -1;
+    }
+
+    .container{
+        display: flex;
+    }
+}
+
+@media (min-width: 1850px){
+    .container-columns-content{
+        grid-row: 1;
+        grid-column: 1 / -1;
+    }
+
+    .primera-foto-sierra{
+        grid-column: 2;
+        margin-top: 4rem;
+    }
+
+    .segunda-foto-sierra{
+        grid-row: 1;
+        grid-column: 2;
+        margin-top: 46rem;
+    }
+
+    .ubicacion{
+        grid-row: 2;
+        margin-top: 7rem;
+        width: 900px;
+    }
+
+    .recomendaciones{
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .precio-actividad{
+        grid-column: 1 / 3;
+    }
+}
+
+
+
+
+

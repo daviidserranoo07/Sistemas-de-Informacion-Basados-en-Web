@@ -1,0 +1,92 @@
+.update-dato{
+    display: grid;
+    padding: 2rem;
+    place-content: center;
+    width: 100%;
+}
+
+#input,#input-area{
+    width: 70rem;
+    justify-content: center;
+    border-radius: 2rem;
+    border: solid 2px black;
+    padding: 1rem;
+    text-transform: uppercase;
+    height: 5rem;
+    font-size: 2rem;
+}
+
+
+#input::-webkit-input-placeholder{
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+#input-area{
+    height: 10rem;
+}
+
+.volver{
+    text-transform: uppercase;
+}
+
+.content-form{
+    border: none;
+}
+
+.container-columns-buttons{
+    text-align: center;
+}
+
+.imagen{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen input{
+    height: 100px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: 1rem 1rem;
+    border-radius: 2rem;
+}
+
+.imagen{
+    position: relative;
+    display: inline-block;
+}
+
+.imagen::before{
+    background-color: #5678EF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Seleccionar ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.imagen input[type="file"]{
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+}
+
+#botones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

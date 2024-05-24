@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block estilos %}
+<link rel="stylesheet" href="../css/roles.css">
+{% endblock %}
+{% block principal %}
+<div id="update" class="oculto" class="visible">
+    <div class="content-form">
+        {% for rol in roles  %}
+        <div class="update-dato">
+            <form action="../update_rol.php" id="form-update" method="post" enctype="multipart/form-data">
+                <h3>{{ rol['usuario'] }}</h3>
+                <p id="rol-actual">Rol actual: {{ rol['rol'] }}</p>
+                <p id="rol-nuevo">Nuevo Rol:</p>
+                <div id="roles">
+                    <input type="hidden" name="input-correo" value="{{ rol['usuario'] }}">
+                    <select name="rol-update">
+                        <option class="rol">Administrador</option>
+                        <option class="rol">Gestor</option>
+                        <option class="rol">Moderador</option>
+                        <option class="rol">Registrado</option>
+                    </select>
+                    <button type="submit">Actualizar</button>
+                </div>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

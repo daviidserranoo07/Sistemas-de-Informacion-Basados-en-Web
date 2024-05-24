@@ -1,0 +1,145 @@
+.oculto{
+    display: none;
+}
+
+.visible{
+    display: grid;
+}
+
+.comment{
+    border: black solid 0.4rem;
+    border-radius: 3rem;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-column: span 2;
+    max-width: 100%;
+    background-color: white;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.foto-perfil{
+    width: 100px;
+    max-height: 100px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.name-user{
+    grid-column: 2;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.comment-p{
+    grid-column: span 2;
+}
+
+.content-form{
+    display: grid;
+    border: black solid 0.4rem;
+    border-radius: 3rem;
+    max-width: 100%;
+    grid-column: span 2;
+    grid-row: 1;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.content-form input{
+    border: black solid 2px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    height: 4rem;
+    text-transform: uppercase;
+}
+
+.input-comentario{
+    display: grid;
+    text-transform: uppercase;
+}
+
+.input-comentario textarea{
+    border: black solid 2px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    height: 7rem;
+    font-size: 1.8rem;
+    padding: 1rem 1rem;
+    resize: none;
+}
+
+.input-comentario label{
+    font-weight: bold;
+}
+
+.imagen{
+    text-transform: uppercase;
+    display: grid;
+}
+
+.imagen input{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: white;
+}
+
+.comment-date{
+    font-weight: bold;
+}
+
+#add-comment{
+    margin-top: 1rem;
+}
+
+
+#modificar-comentario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    margin-top: 9rem;
+    width: 95%;
+}
+
+#form{
+    width: 100%;
+}
+
+.info-comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit{
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 0;
+    margin-top: 2rem;
+    box-shadow: none;
+}
+
+@media (min-width: 1200px){
+    .visible{
+        grid-column: span 2;
+    }
+
+    .comment{
+        grid-template-columns: 10% 90%;
+    }
+
+    .name-user{
+        margin-left: 5rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .name-user{
+        margin-left: 1.5rem;
+    }
+}
+

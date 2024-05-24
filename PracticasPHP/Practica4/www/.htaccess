@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+#Redirige la URL limpia a la URL con parámetros de consulta
+RewriteRule ^actividad/(\d+)$ actividad.php?ac=$1 [L]
+#http://localhost/actividad_imprimir.php?ac=1 que se convierta en http://localhost/actividad_imprimir/1
+RewriteRule ^actividad_imprimir/(\d+)$ actividad_imprimir.php?ac=$1 [L]
+#http://localhost/index.php que se convierta en http://localhost/home
+RewriteRule ^home$ index.php [L]
+RewriteRule ^perfil$ perfil.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^registro$ registro.php [L]
+RewriteRule modificar_roles$ modificar_roles.php [L]
+RewriteRule aniadir_actividad$ aniadir.php [L]
+RewriteRule modificar_actividades$ modificar_actividades.php [L]
+RewriteRule modificar_actividad/(\d+)$ modificar_actividad.php?ac=$1 [L]
+RewriteRule modificar_comentarios$ modificar_comentarios.php [L]
+
+# Redirige modificar_actividad a modificar_actividades si no hay ningún número después de modificar_actividad/
+RewriteRule modificar_actividad/?$ modificar_actividades.php [L]
+
+# Redirige modificar_actividad/seguido de un número a modificar_actividad.php con ese número como parámetro
+RewriteRule ^modificar_actividad/(\d+)$ modificar_actividad.php?ac=$1 [L]
+</IfModule>
+
+
+

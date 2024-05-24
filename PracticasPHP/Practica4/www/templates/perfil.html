@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/update.css">
+<link rel="stylesheet" href="../css/perfil.css">
+{% endblock %}
+
+{% block principal %}
+<div id="informacion" class="visible" class="oculto">
+    <div class="informacion-usuario">
+        <div class="dato-personal">
+            <h2 class="nombre-usuario">{{ usuario['nombre'] }}</h4>
+        </div>
+        <div class="dato-personal">
+            <h3>Nombre</h3>
+            <p class="nombre">{{ usuario['nombre'] }}</p>
+        </div>
+        <div class="dato-personal">
+            <h3>Correo Electrónico</h3>
+            <p class="correo">{{ usuario['correo'] }}</p>
+        </div>
+        <div class="dato-personal">
+            <h3>Nombre Usuario</h3>
+            <p class="usuario">{{ usuario['usuario'] }}</p>
+        </div>
+        <div class="dato-personal">
+            <h3>Rol</h3>
+            <p class="rol">{{ usuario['rol'] }}</p>
+        </div>
+        <div class="dato-personal">
+            <h3>Contraseña</h3>
+            <p class="password">********</p>
+        </div>
+        <button id="button-update">Editar</button>
+    </div>
+</div>
+<div id="update" class="oculto" class="visible">
+    <div class="content-form">
+        <form action="../update_usuario.php" id="form-update" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="input-correo-antiguo" value="{{ usuario['correo'] }}">
+            <div class="imagen">
+                <label for="">Subir Foto Perfil</label>
+                <input type="file" id="input-image" name="input-image" accept="image/*"><!--Aceptamos cualquier formato de imagen-->
+            </div>
+            <div class="update-dato">
+                <h3>Nombre:</h3>
+                <input id="input-name" name="input-name">
+            </div>
+            <!-- <div class="update-dato">
+                <h3>Correo Electrónico:</h3>
+                <input id="update-dato" name="input-correo-nuevo">
+            </div> -->
+            <div class="update-dato">
+                <h3>Nombre Usuario:</h3>
+                <input id="input-usuario" name="input-usuario">
+            </div>
+            <div class="update-dato">
+                <h3>Contraseña:</h3>
+                <input type="password" id="input-password" name="input-password"></input>
+            </div>
+            <input type="submit" id="set-formulario" name="enviar" placeholder="Enviar"/>
+            <a href="perfil">
+                <button>Volver</button>
+            </a>
+            
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script type="module" src="../js/mostrar-update.js" defer></script>
+{% endblock %}

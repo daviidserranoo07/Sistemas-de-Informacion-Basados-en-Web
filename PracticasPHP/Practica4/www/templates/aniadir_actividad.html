@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/update-actividad.css">
+{% endblock %}
+
+{% block principal %}
+    <div id="update">
+        <div class="content-form">
+            <form action="../add_actividad.php" id="form-update" method="post" enctype="multipart/form-data">
+                <div class="update-dato">
+                    <h3>Nombre Actividad:</h3>
+                    <input id="input" name="input-name" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Descripción Actividad:</h3>
+                    <textarea id="input-area" name="input-descripcion"></textarea required>
+                </div>
+                <div class="update-dato">
+                    <h3>Recomendaciones:</h3>
+                    <input id="input" name="input-recomendaciones" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Precio:</h3>
+                    <input type="number" id="input" name="input-precio" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Fecha:</h3>
+                    <input type="date" id="input" name="input-fecha" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Nombre Ubicacion:</h3>
+                    <input id="input" name="input-ubicacion-nombre" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Url Ubicacion:</h3>
+                    <input id="input" name="input-ubicacion-url" required>
+                </div>
+                <div class="update-dato">
+                    <h3>Añadir Portada:</h3>
+                    <div class="imagen">
+                        <input type="file" id="input-image" name="input-portada" accept="image/*" required><!--Aceptamos cualquier formato de imagen-->
+                    </div>
+                </div>
+                <div class="update-dato">
+                    <h3>Añadir Foto 1:</h3>
+                    <div class="imagen">
+                        <input type="file" id="input-image" name="input-foto-1" accept="image/*" required><!--Aceptamos cualquier formato de imagen-->
+                    </div>
+                </div>
+                <div class="update-dato">
+                    <h3>Añadir Foto 2:</h3>
+                    <div class="imagen">
+                        <input type="file" id="input-image" name="input-foto-2" accept="image/*" required><!--Aceptamos cualquier formato de imagen-->
+                    </div>
+                </div>
+                <div class="update-dato">
+                    <div id="botones">
+                        <input type="submit" id="set-formulario" name="enviar" placeholder="Enviar"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

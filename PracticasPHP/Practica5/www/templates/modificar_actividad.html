@@ -1,0 +1,64 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/update-actividad.css">
+{% endblock %}
+
+{% block principal %}
+    <div id="update">
+        <div class="content-form">
+            <form action="../update_actividad.php" id="form-update" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="input-id" value="{{ actividad['idAc'] }}">
+                <div class="update-dato">
+                    <h3>Actualizar Nombre Actividad:</h3>
+                    <input id="input" name="input-name" placeholder="{{ actividad['nombre'] }}">
+                </div>
+                <div class="update-dato">
+                    <h3>Actualizar Descripción Actividad:</h3>
+                    <textarea id="input-area" name="input-descripcion" placeholder=""></textarea>
+                </div>
+                <div class="update-dato">
+                    <h3>Actualizar Recomendaciones:</h3>
+                    <input id="input" name="input-recomendaciones" placeholder="">
+                </div>
+                <div class="update-dato">
+                    <h3>Actualizar Precio:</h3>
+                    <input type="number" id="input" name="input-precio" placeholder="{{ actividad['precio'] }}">
+                </div>
+                <div class="update-dato">
+                    <h3>Actualizar Fecha:</h3>
+                    <input type="date" id="input" name="input-fecha" placeholder="{{ actividad['fecha'] }}">
+                </div>
+                <div class="update-dato">
+                    <h3>Actualizar Nombre Ubicacion:</h3>
+                    <input id="input" name="input-ubicacion-nombre" placeholder="{{ actividad['ubicacion_nombre'] }}">
+                </div>
+                <div class="update-dato">
+                    <h3> Actualizar Url Ubicacion:</h3>
+                    <input id="input" name="input-ubicacion-url" placeholder="{{ actividad['ubicacion_url'] }}">
+                </div>
+                <div class="update-dato">
+                    <h3> Actualizar Portada:</h3>
+                    <div class="imagen">
+                        <input type="file" id="input-image" name="input-image" accept="image/*" >
+                    </div>
+                </div>
+                <div class="update-dato">
+                    <h3>Publicada:</h3>
+                    {%if actividad['publicada'] == 1 %}
+                        <input type="checkbox" id="input-publicada" name="input-publicada" value="1" checked>
+                        <input type="hidden" name="input-publicada" value="0">
+                    {% else %}
+                        <input type="hidden" name="input-publicada" value="1">
+                        <input type="checkbox" id="input-publicada" name="input-publicada" value="1">
+                    {% endif %}
+                </div>
+                <div class="update-dato">
+                    <div id="botones">
+                        <input type="submit" id="set-formulario" name="enviar" placeholder="Enviar"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

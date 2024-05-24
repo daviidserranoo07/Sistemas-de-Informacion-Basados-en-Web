@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+{% block estilos %}
+<link rel="stylesheet" href="../css/comentarios.css">
+<link rel="stylesheet" href="../css/lista_comentarios.css">
+{% endblock %}
+{% block principal %}
+    <div id="container-barra">
+        <form id="barra-busqueda">
+            <input type="text" id="input-busqueda" name="input-buscar" placeholder="Buscar Actividad">
+        </form>
+    </div>
+    <div class="container-rows">
+    {% for DetalleComentario in comentarios %}
+    <div class="comment">
+        <div class="info-user">
+            <img class="foto-perfil" src="{{ DetalleComentario['url_foto_perfil'] }}">
+            <h5 class="name-user">{{ DetalleComentario['usuario'] }}</h5>
+        </div>
+        <div class="info-comment">
+            <p class="comment-p">{{ DetalleComentario['comentario'] }}</p>
+            {% if DetalleComentario['moderado'] %}
+            <p class="comment-date">Moderado: {{ DetalleComentario['fecha_comentario'] }} <span class="date"></span></p>
+            {% else %}
+            <p class="comment-date">{{ DetalleComentario['fecha_comentario'] }} <span class="date"></span></p>
+            {% endif %}
+        </div>
+        <div id="modificar-comentario">
+            <form action="../update_comentario.php" id="form" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="ac" value="{{ DetalleComentario['id_actividad'] }}">
+                <input type="hidden" name="input-id-comentario" value="{{ DetalleComentario['id_comentario'] }}">
+                <input type="hidden" id="input-usuario" value="{{ usuario['usuario'] }}" name="input-usuario">
+                <input  type="hidden" id="input-correo" value="{{ usuario['correo'] }}" name="input-correo">
+                <div class="input-comentario">
+                    <label for="">Moderar Comentario:</label>
+                    <textarea id="input-comment" name="input-comentario"></textarea>
+                </div>
+                <input type="submit" id="set-formulario" name="enviar" placeholder="Editar Comentario"/>
+            </form>
+            <form id="delete-form" action="../eliminar_comentario.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{ DetalleComentario['id_actividad'] }}">
+                <input type="hidden" name="id_comentario" value="{{ DetalleComentario['id_comentario'] }}">
+                <input type="hidden" name="correo" value="{{ DetalleComentario['correo'] }}">
+                <input type="image" src="../img/papelera.png" class="edit">
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+{% block js %}
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+<script type="module" src="../js/buscar_comentarios.js" defer></script>
+{% endblock %}

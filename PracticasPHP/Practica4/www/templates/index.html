@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades de Montaña</title>
+    <link rel="stylesheet" href="../css/portada.css">
+    {% block estilos %}
+
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <a href="../home">
+            <img class="logo" src="../img/logo.jpg" alt="logo">
+        </a>
+        <div class="superior-central">
+            <h1>Actividades Montaña</h1>
+            <nav>
+                <ul class="menusup">
+                    <li><a href="#">¿Quienes Somos?</a></li>
+                    <li><a href="#">Mejores Rutas</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="perfil">
+            {% if usuario.conectado==true %}
+                <a href="../perfil">
+                    <img class="foto-perfil" src="{{ usuario['url_foto'] }}" alt="perfil">
+                </a>
+            {% else %}
+            <a href="../login">
+                <img class="foto-perfil" src="../img/user-photo.jpg" alt="perfil">
+            </a>
+            {% endif %}
+            {% if usuario['conectado']==true %}
+                <a class="logaut" href="../logaut.php">Cerrar Sesion</a>
+            {% else %}
+                <a class="logaut" href="../login">Iniciar Sesion</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="container">
+        <aside class="lateral">
+            {% if usuario['rol']=='Administrador' %}
+            <h3>Gestion</h3>
+            <ul class="menulat">
+                <li><a href="modificar_roles">Modificar Roles</a></li>
+                <li><a href="aniadir_actividad">Añadir Actividades</a></li>
+                <li><a href="modificar_actividades">Modificar Actividades</a></li>
+                <li><a href="modificar_comentarios">Moderar Comentarios</a></li>
+            </ul>
+            {% endif %}
+            {% if usuario['rol']=='Gestor' %}
+            <h3>Gestion</h3>
+            <ul class="menulat">
+                <li><a href="aniadir_actividad">Añadir Actividades</a></li>
+                <li><a href="modificar_actividades">Modificar Actividades</a></li>
+            </ul>
+            {% endif %}
+            {% if usuario['rol']=='Moderador' %}
+            <h3>Gestion</h3>
+            <ul class="menulat">
+                <li><a href="modificar_comentarios">Moderar Comentarios</a></li>
+            </ul>
+            {% endif %}
+            <h3>Enlaces de Interes</h3>
+            <ul class="menulat">
+                <li><a href="#">Horario</a></li>
+                <li><a href="#">Correo Electrónico</a></li>
+                <li><a href="#">Equipo</a></li>
+                <li><a href="#">Opiniones de Clientes</a></li>
+            </ul>
+        </aside>
+        <main>
+        {% block principal %}
+           
+        {% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>David Serrano Domínguez - © 2024</p>
+    </footer>
+{% block js %}
+{% endblock %}
+</body>
+</html>

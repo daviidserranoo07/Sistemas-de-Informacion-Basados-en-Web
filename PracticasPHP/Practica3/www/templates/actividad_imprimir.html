@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades de Montaña</title>
+    <link rel="stylesheet" href="../css/actividad_imprimir.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            <h2>{{ actividad.nombre }}</h2>
+            <div class="container-columns">
+                <div class="container-columns-content">
+                    <div class="primera-foto-sierra">
+                        <img src="{{ actividad.portada }}" alt="{{ actividad.nombre }}">
+                    </div>                    
+                    <p>{{ actividad.descripcion }}</p>
+                    <div class="recomendaciones">
+                        <h4>recomendaciones</h4>
+                        <p>{{ actividad.recomendaciones }}</p>
+                    </div>
+                    <div class="segunda-foto-sierra">
+                        {% for foto in actividad.fotos %}
+                            {% if loop.index == 2 %}
+                                <img src="{{ foto.ruta }}" alt="{{ actividad.nombre }}">
+                            {% endif %}
+                        {% endfor %}
+                    </div> 
+                    <h4 class="precio-actividad">{{ actividad.precio }}</h4>
+                    <a class="direccion" href={{ actividad.ubicacion_url }}>
+                        <p>{{ actividad.ubicacion_nombre }}</p>   
+                    </a>
+                    <div class="logo">
+                        <img src="../img/logo.jpg" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>David Serrano Domínguez - © 2024</p>
+    </footer>
+</body>
+</html>

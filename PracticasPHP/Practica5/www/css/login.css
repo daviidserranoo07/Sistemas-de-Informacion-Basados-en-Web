@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9bea3;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    font-size: 1.15rem;
+}
+
+button{
+    text-transform: uppercase;
+    background-color: #4CAF50;
+    width: 175px;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
+.container {
+    text-align: center;
+    border: 0.3rem solid black;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-box{
+    background-color: white;
+    padding: 4rem 4rem;
+}
+
+.login-box h2{
+    font-size: 2rem;
+}
+
+.input{
+    margin: 2rem 2rem;
+    display: grid;
+    place-items: center;
+    grid-row: 2;
+}
+
+.input input{
+    width: 20rem;
+    margin-top: 1rem;
+    height: 1.6rem;
+    font-size: 1rem;
+    border: 0.15rem solid black;
+}
+
+.input label{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.boton-iniciar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#success-mensaje{
+    display: none;
+    color: green;
+    margin-top: 1rem;
+}
+
+#error-mensaje{
+    display: none;
+    color: red;
+    margin-top: 1rem;
+}
+
+

@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+{% endblock %}
+    {% block principal %}
+            <h2>Actividades Disponibles</h2>
+            <div class="container-columns">
+                {% for Actividad in actividades %}
+                <div class="actividad">
+                    <a href="actividad/{{ Actividad.id }}">
+                        <div class="contenido-actividad">
+                            <img src="{{ Actividad.portada }}" alt="{{ Actividad.nombre }}">
+                            <h3> {{ Actividad.nombre }}</h3>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+    {% endblock %}

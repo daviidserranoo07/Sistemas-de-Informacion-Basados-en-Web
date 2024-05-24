@@ -1,0 +1,72 @@
+h3{
+    color: black;
+    text-align: start;
+    margin-left: 2rem;
+}
+.container-rows{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.actividad{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+}
+
+.actividad:hover{
+    transform: scale(1.03);
+}
+
+.edit{
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 0;
+    margin-top: 2rem;
+    box-shadow: none;
+}
+
+#nombre{
+    display: flex;
+    flex-direction: row;
+}
+
+#publicada{
+    color: green;
+}
+
+#no-publicada{
+    color: red;
+}
+
+#container-barra{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4rem;
+    margin-left: 3rem;
+    max-width: 96%;
+}
+
+#barra-busqueda{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+#input-busqueda{
+    width: 100%;
+    height: 100%;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 2rem;
+}

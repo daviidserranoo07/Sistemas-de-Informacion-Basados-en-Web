@@ -1,0 +1,31 @@
+h3{
+    color: black;
+    text-align: start;
+    margin-left: 2rem;
+}
+.container-rows{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.actividad{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+}
+
+.actividad:hover{
+    transform: scale(1.03);
+}
+
+.edit{
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 0;
+    margin-top: 2rem;
+    box-shadow: none;
+}

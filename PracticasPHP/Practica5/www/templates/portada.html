@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+{% endblock %}
+    {% block principal %}
+        <h2>Actividades Disponibles</h2>
+        <div id="container-barra">
+            <form id="barra-busqueda">
+                <input type="text" id="input-busqueda" name="input-buscar" placeholder="Buscar Actividad">
+            </form>
+        </div>
+        <div class="container-columns">
+            {% for Actividad in actividades %}
+            {% if usuario.rol == 'Administrador' or usuario.rol =='Gestor' %}
+                <div class="actividad">
+                    <a href="actividad/{{ Actividad.id }}">
+                        <div class="contenido-actividad">
+                            <img src="{{ Actividad.portada }}" alt="{{ Actividad.nombre }}">
+                            <h3> {{ Actividad.nombre }}</h3>
+                        </div>
+                    </a>
+                </div>
+            {% elseif Actividad.publicada %}
+                <div class="actividad">
+                    <a href="actividad/{{ Actividad.id }}">
+                        <div class="contenido-actividad">
+                            <img src="{{ Actividad.portada }}" alt="{{ Actividad.nombre }}">
+                            <h3> {{ Actividad.nombre }}</h3>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% endfor %}
+            <div class="actividad">
+                <a href="/aniadir_actividad">
+                    <div class="contenido-actividad">
+                        <img src="../img/mas.png" alt="Añadir Actividad">
+                        <h3>Añadir Actividad</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endblock %}
+{% block js %}
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+<script type="module" src="../js/buscar_actividad_publicada.js" defer></script>
+{% endblock %}

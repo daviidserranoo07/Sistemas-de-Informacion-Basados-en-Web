@@ -1,0 +1,44 @@
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    appearance: none;
+}
+
+.update-dato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#roles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 2rem;
+}
+
+select{
+    width: 500px;
+}
+
+#rol-actual, #rol-nuevo{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.rol{
+    background-color: white;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.rol option:checked{
+    padding: 5rem;
+    font-size: 10rem;
+}

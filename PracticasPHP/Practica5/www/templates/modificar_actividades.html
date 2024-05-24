@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/modificarActividad.css">
+{% endblock %}
+
+{% block principal %}
+<div id="container-barra">
+    <form id="barra-busqueda">
+        <input type="text" id="input-busqueda" name="input-buscar" placeholder="Buscar Actividad">
+    </form>
+</div>
+<div class="container-rows">
+    {% for Actividad in actividades %}
+    <div class="actividad">
+        {%if Actividad['publicada'] %}
+        <a href="../actividad/{{ Actividad['id'] }}" id="nombre">
+            <h3> {{ Actividad['nombre'] }}</h3>
+            <h3 id="publicada">(Publicada)</h3>
+        </a>
+        {% else %}
+        <a href="../actividad/{{ Actividad['id'] }}" id="nombre">
+            <h3> {{ Actividad['nombre'] }}</h3>
+            <h3 id="no-publicada">(No Publicada)</h3>
+        </a>
+        {% endif %}
+        <a href="modificar_actividad/{{ Actividad['id'] }}">
+            <img class="edit" src="../img/lapiz.png"/>
+        </a>
+        <form id="delete-form" action="../eliminar_actividad.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{ Actividad['id'] }}">
+            <input type="image" src="../img/papelera.png" class="edit">
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+<script type="module" src="../js/buscar_actividad.js" defer></script>
+{% endblock %}
