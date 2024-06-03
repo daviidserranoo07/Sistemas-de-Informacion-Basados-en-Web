@@ -6,7 +6,7 @@
 {% block principal %}
     <div id="container-barra">
         <form id="barra-busqueda">
-            <input type="text" id="input-busqueda" name="input-buscar" placeholder="Buscar Actividad">
+            <input type="text" id="input-busqueda" name="input-buscar" placeholder="Buscar Comentario">
         </form>
     </div>
     <div class="container-rows">
@@ -28,8 +28,8 @@
             <form action="../update_comentario.php" id="form" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="ac" value="{{ DetalleComentario['id_actividad'] }}">
                 <input type="hidden" name="input-id-comentario" value="{{ DetalleComentario['id_comentario'] }}">
-                <input type="hidden" id="input-usuario" value="{{ usuario['usuario'] }}" name="input-usuario">
-                <input  type="hidden" id="input-correo" value="{{ usuario['correo'] }}" name="input-correo">
+                <input type="hidden" id="input-usuario" value="{{ DetalleComentario['usuario'] }}" name="input-usuario">
+                <input  type="hidden" id="input-correo" value="{{ DetalleComentario['correo'] }}" name="input-correo">
                 <div class="input-comentario">
                     <label for="">Moderar Comentario:</label>
                     <textarea id="input-comment" name="input-comentario"></textarea>

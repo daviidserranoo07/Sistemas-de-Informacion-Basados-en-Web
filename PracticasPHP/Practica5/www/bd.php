@@ -223,7 +223,7 @@
         return $actividad;
     }
 
-    function getActividadesNombre($nombre){
+    function getActividadesNombre($nombre,$correo){
 
         $conexionBD = ConexionBD::obtenerInstancia();
         $conexion = $conexionBD->obtenerConexion();
@@ -233,7 +233,13 @@
         $stmt->bind_param("s",$nombre);
         $stmt->execute();
         $res = $stmt->get_result();
-    
+
+        if($correo == 'no_registrado'){
+            $usuario = array('rol'=>'no_registrado');
+        }else{
+            $usuario = getUsuario($correo);
+        }
+        
         $actividades = array();
     
         if($res->num_rows > 0){
@@ -242,7 +248,8 @@
                     'id' => $row['id'],
                     'nombre' => $row['nombre'],
                     'portada' => $row['ruta'],
-                    'publicada' => $row['publicada']
+                    'publicada' => $row['publicada'],
+                    'rol_usuario' => $usuario['rol']
                 );
             }
         }
@@ -583,7 +590,7 @@
             $update->execute();
             $update->close();
         }
-        
+
         $conexion->close();
     }
 

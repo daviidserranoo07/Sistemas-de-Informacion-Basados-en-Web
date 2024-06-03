@@ -31,6 +31,7 @@
                 </div>
             {% endif %}
             {% endfor %}
+            {% if usuario.rol == 'Administrador' or usuario.rol =='Gestor' %}
             <div class="actividad">
                 <a href="/aniadir_actividad">
                     <div class="contenido-actividad">
@@ -39,6 +40,7 @@
                     </div>
                 </a>
             </div>
+            {% endif %}
         </div>
     {% endblock %}
 {% block js %}
